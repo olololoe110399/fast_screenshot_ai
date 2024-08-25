@@ -1,0 +1,45 @@
+[tool.black]
+line-length = 150
+ignore = ["W293", "W504", "E221"]
+max-complexity = 20
+exclude = '''
+(
+    migrations
+    | .mypy_cache
+    | .pytest_cache
+    | .tox
+    | .venv
+    | dist
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 150
+
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["olololoe"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pyqt5 = "^5.15.11"
+pytesseract = "^0.3.13"
+openai = "^1.42.0"
+pyperclip = "^1.9.0"
+ollama = "^0.3.1"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+black = "^24.8.0"
+pre-commit = "^3.8.0"
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
